@@ -210,8 +210,8 @@
     var heroRingsEl = document.getElementById('heroRings');
     if (heroRingsEl && typeof MagicRings !== 'undefined') {
       new MagicRings('#heroRings', {
-        color: "#e5e5e6",
-        colorTwo: "#a0a0a0",
+        color: "#667085",
+        colorTwo: "#3f4a5a",
         ringCount: 6,
         speed: 1,
         attenuation: 10,

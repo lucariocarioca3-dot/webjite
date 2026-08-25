@@ -433,9 +433,11 @@ ul {
   object-fit: contain;
   object-position: center;
   display: block;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
 }
 
 
@@ -443,15 +445,21 @@ ul {
   position: relative;
   isolation: isolate;
   aspect-ratio: 4 / 3;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
 .hero-rings {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  border-radius: 0;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
   pointer-events: none;
-  z-index: 3;
+  z-index: 10;
 }
 
 .hero-rings canvas {
