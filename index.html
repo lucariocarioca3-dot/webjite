@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WebJite — Criação de sites profissionais e modernos para o seu negócio crescer na internet.">
+  <title>WebJite — Criação de Sites para sua Empresa</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233F4A5A'/><text x='50' y='68' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>W</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/three@latest/build/three.min.js"></script>
+  <script>
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('webjite-theme'); } catch (e) {}
+      if (stored !== 'dark' && stored !== 'light') {
+        stored = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', stored);
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#inicio" class="logo" aria-label="WebJite — Início">
+        <img src="img/webjite-logo.png" alt="WebJite" class="logo-img">
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio" class="nav-link">Início</a>
+        <a href="#projetos" class="nav-link">Projetos</a>
+        <a href="#sobre" class="nav-link">Sobre Nós</a>
+        <a href="#funcionarios" class="nav-link">Funcionários</a>
+        <a href="#contato" class="nav-link nav-cta">Fale Conosco</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro e escuro" title="Alternar tema">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-inner">
+        <div class="hero-content reveal">
+          <span class="hero-badge">Startup de criação de sites</span>
+          <h1 class="hero-title">Sua presença digital,<br>feita <span class="accent">do seu jeito</span></h1>
+          <p class="hero-subtitle">
+            A <strong>WebJite</strong> cria sites profissionais para quem quer vender na internet.
+            Do design à publicação, sem enrolação e com resultado.
+          </p>
+          <div class="hero-actions">
+            <a href="#contato" class="btn btn-primary">Solicitar Orçamento</a>
+            <a href="#projetos" class="btn btn-ghost">Ver Projetos</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-value">10+</span>
+              <span class="stat-label">Projetos entregues</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">2 anos</span>
+              <span class="stat-label">De experiência</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">100%</span>
+              <span class="stat-label">Feito por nós dois</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="hero-rings" id="heroRings"></div>
+          <img src="img/webjite-logo.png" alt="Foto da WebJite" class="hero-photo">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projetos">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Portfólio</span>
+          <h2 class="section-title">Projetos que já <span class="accent">entregamos</span></h2>
+          <p class="section-desc">
+            Uma amostra do que a WebJite já construiu. Cada projeto é pensado
+            para o objetivo de cada cliente.
+          </p>
+        </div>
+        <div class="cards-grid">
+          <!-- TROCAR: troque o texto da div .photo-slot por <img src="..." alt="..."> -->
+          <article class="project-card reveal">
+            <a href="https://blueconcursos.com" target="_blank" rel="noopener" class="project-cover-link" aria-label="Visitar Blue Concursos">
+              <img src="img/blueconcursos-capa.PNG" alt="Capa do site Blue Concursos" class="project-cover">
+            </a>
+            <div class="project-body">
+              <span class="project-category">Blog Educacional</span>
+              <h3 class="project-title">Blue Concursos</h3>
+              <p class="project-desc">Blog que ajuda estudantes a conquistarem a vaga no serviço público, com conteúdos práticos sobre técnicas de estudo, análises de editais e notícias de concursos, estratégias de motivação e indicações de cursos e materiais. O sucesso do concurseiro é a nossa motivação.</p>
+<div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">TS</span>
+                <span class="tag">PHP</span>
+              </div>
+              <a href="https://blueconcursos.com" class="btn btn-small" target="_blank" rel="noopener">Visitar site</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <img src="img/carzone-capa.PNG" alt="Capa do site Blue Concursos" class="project-cover">
+            <div class="project-body">
+              <span class="project-category">Concessionária</span>
+              <h3 class="project-title">Car Zone</h3>
+              <p class="project-desc">Loja online de carros de concessionária, com catálogo completo de veículos, fotos e preços para o cliente encontrar o carro ideal. O site ainda conta com uma ferramenta de simulação de financiamento em tempo real, que calcula as parcelas na hora conforme a entrada e o número de parcelas escolhidos.</p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JS</span>
+              </div>
+              <a href="https://carzonecat-dmstdrds.manus.space/" class="btn btn-small" target="_blank" rel="noopener">Visitar site</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <img src="img/barbearia-capa.PNG" alt="Capa do site Agendamento de Barbeiro" class="project-cover">
+            <div class="project-body">
+              <span class="project-category">Agendamento</span>
+              <h3 class="project-title">Agendamento de Barbeiro</h3>
+              <p class="project-desc">Site de agendamento online para barbearias, criado para facilitar a vida tanto dos clientes quanto dos barbeiros. Pelo site, o cliente escolhe o barbeiro de sua preferência, seleciona o serviço desejado — como corte, barba ou hidratação — e confirma o horário disponível em poucos cliques, sem precisar ligar ou esperar atendimento.</p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">TS</span>
+              </div>
+              <a href="https://barbearia-six-nu.vercel.app/" class="btn btn-small" target="_blank" rel="noopener">Visitar site</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="photo-slot project-cover">Foto do projeto</div>
+            <div class="project-body">
+              <span class="project-category">Restaurante</span>
+              <h3 class="project-title">Sabor da Casa</h3>
+              <p class="project-desc">Cardápio digital com pedidos e contato direto com a cozinha.</p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JS</span>
+              </div>
+              <a href="#" class="btn btn-small">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="photo-slot project-cover">Foto do projeto</div>
+            <div class="project-body">
+              <span class="project-category">Corporativo</span>
+              <h3 class="project-title">Advocacia Rocha &amp; Lima</h3>
+              <p class="project-desc">Portal para escritório de advocacia com áreas de atuação.</p>
+              <div class="project-tags">
+                <span class="tag">WordPress</span>
+                <span class="tag">PHP</span>
+              </div>
+              <a href="#" class="btn btn-small">Ver detalhes</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="photo-slot project-cover">Foto do projeto</div>
+            <div class="project-body">
+              <span class="project-category">Portfólio</span>
+              <h3 class="project-title">Estúdio Visual 7</h3>
+              <p class="project-desc">Portfólio criativo para estúdio de design, com galeria de trabalhos.</p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+              </div>
+              <a href="#" class="btn btn-small">Ver detalhes</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="sobre">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Sobre Nós</span>
+          <h2 class="section-title">Quem é a <span class="accent">WebJite</span></h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              A <strong>WebJite</strong> começou pequena, como a maioria das coisas boas.
+              Somos uma dupla que resolveu se juntar para entregar sites de verdade:
+              bonitos, rápidos e que ajudam o cliente a vender.
+            </p>
+            <p>
+              Hoje atendemos empresas de todos os tamanhos. Cada projeto começa numa
+              conversa, passa por um planejamento simples e termina com um site no ar
+              que você consegue entender e gerenciar.
+            </p>
+            <ul class="about-list">
+              <li>Atendimento direto, sem atravessador</li>
+              <li>Sites rápidos e bem posicionados no Google</li>
+              <li>Suporte depois que o site vai ao ar</li>
+            </ul>
+          </div>
+          <div class="about-values reveal">
+            <div class="value-card">
+              <span class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                </svg>
+              </span>
+              <h4>Missão</h4>
+              <p>Deixar qualquer negócio com uma presença online que funciona.</p>
+            </div>
+            <div class="value-card">
+              <span class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </span>
+              <h4>Visão</h4>
+              <p>Ser reconhecido no mercado como quem entrega o que promete.</p>
+            </div>
+            <div class="value-card">
+              <span class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </span>
+              <h4>Valores</h4>
+              <p>Simplicidade, honestidade e trabalho bem feito.</p>
+            </div>
+          </div>
+        </div>
+        <div class="stats-bar reveal">
+          <div class="stat-item">
+            <span class="stat-number" data-count="10" data-suffix="+">0</span>
+            <span class="stat-name">Projetos entregues</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="2" data-suffix="">0</span>
+            <span class="stat-name">Anos de estrada</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="15" data-suffix="+">0</span>
+            <span class="stat-name">Clientes fiéis</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="2" data-suffix="">0</span>
+            <span class="stat-name">Profissionais</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="funcionarios">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Nosso Time</span>
+          <h2 class="section-title">Conheça quem faz a <span class="accent">WebJite</span></h2>
+          <p class="section-desc">
+            Somos dois. Fazemos tudo: design, código, domínio e o que mais aparecer.
+            Clique em "Ver Portfólio" para conhecer o trabalho de cada um.
+          </p>
+        </div>
+        <div class="cards-grid team-grid">
+          <article class="team-card reveal">
+            <div class="avatar"><img src="img/Luiz-perfil.jpeg" alt="Foto de Luiz Carlos Silva Rodrigues"></div>
+            <div class="team-info">
+              <h3 class="team-name">Luiz Carlos Silva Rodrigues</h3>
+              <span class="team-role">Desenvolvedor Web</span>
+              <p class="team-bio">Cuida do projeto de ponta a ponta: estrutura, visual e o que mais precisar. Está em tudo.</p>
+              <a href="https://note-101.gamer.gd/?i=1" target="_blank" rel="noopener" class="btn btn-outline btn-small">Ver Portfólio</a>
+            </div>
+          </article>
+
+          <article class="team-card reveal">
+            <div class="avatar"><img src="img/pedro-perfil.jpeg" alt="Foto de Pedro Lucas Argondizz Evangelista Moreira"></div>
+            <div class="team-info">
+              <h3 class="team-name">Pedro Lucas Argondizz Evangelista Moreira</h3>
+              <span class="team-role">Designer &amp; Desenvolvedor</span>
+              <p class="team-bio">Do rascunho ao site no ar: layout, código e ajustes finos. Também está em tudo.</p>
+              <a href="https://portifolio-pedro.lovestoblog.com/?i=1" target="_blank" rel="noopener" class="btn btn-outline btn-small">Ver Portfólio</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="contato">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="contact-content">
+            <span class="section-tag">Contate-nos</span>
+            <h2 class="section-title">Vamos criar o site <span class="accent">do seu negócio</span>?</h2>
+            <p class="section-desc">
+              Fale com a gente pelo WhatsApp e receba um orçamento sem compromisso.
+              Respondemos rápido.
+            </p>
+            <div class="contact-actions">
+              <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" class="btn btn-whatsapp" id="whatsappBtn">
+                <span class="wa-icon">
+                  <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor" aria-hidden="true">
+                    <path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.7 6L4 29l8.2-1.6c1.2.6 2.5.9 3.8.9 6.6 0 12-5.4 12-12S22.6 3 16 3zm5.6 17.5c-.2.7-1.3 1.3-1.8 1.4-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.6.6c-.2.2-.4.4-.2.7.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1l1.1-1.3c.3-.3.5-.3.8-.2l2 .9c.3.2.5.3.6.4.1.2.1.7-.1 1.4z"/>
+                  </svg>
+                </span>
+                Chamar no WhatsApp
+              </a>
+              <div class="contact-meta">
+                <p><strong>E-mail:</strong> contato@webjite.com.br</p>
+                <p><strong>Telefone:</strong> +55 (11) 99999-9999</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#inicio" class="logo" aria-label="WebJite — Início">
+          <img src="img/webjite-logo.png" alt="WebJite" class="logo-img footer-logo">
+        </a>
+        <p>Criação de sites que funcionam. Do planejamento à entrega, do seu jeito.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <a href="#inicio">Início</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#sobre">Sobre Nós</a>
+        <a href="#funcionarios">Funcionários</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="mailto:contato@webjite.com.br">contato@webjite.com.br</a>
+        <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#">@webjite</a>
+        <a href="#">linkedin.com/webjite</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year"></span> WebJite. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/MagicRings.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
