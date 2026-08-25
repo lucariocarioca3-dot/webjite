@@ -450,6 +450,21 @@ ul {
   box-shadow: none !important;
 }
 
+.hero-visual::before {
+  content: '';
+  position: absolute;
+  inset: 9%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(63, 74, 90, 0.42) 0%, rgba(63, 74, 90, 0.18) 38%, rgba(63, 74, 90, 0.04) 58%, transparent 76%);
+  filter: blur(22px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="dark"] .hero-visual::before {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.045) 42%, transparent 76%);
+}
+
 .hero-rings {
   position: absolute;
   inset: 0;
@@ -466,7 +481,7 @@ ul {
   display: block;
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 0 1.5px rgba(63, 74, 90, 0.72)) drop-shadow(0 0 4px rgba(255, 255, 255, 0.28));
+  filter: brightness(1.18) contrast(1.12) drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
 }
 
 .hero-photo {
