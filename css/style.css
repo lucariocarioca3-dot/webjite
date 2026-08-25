@@ -67,6 +67,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 84px;
+  overflow-x: hidden;
 }
 
 body {
@@ -461,8 +462,8 @@ ul {
 
 .hero-rings {
   position: absolute;
-  inset: 0;
-  overflow: hidden;
+  inset: -14%;
+  overflow: visible;
   border: 0 !important;
   border-radius: 0 !important;
   background: transparent !important;
@@ -481,6 +482,12 @@ ul {
 /* O efeito é desenhado exclusivamente pelo canvas WebGL. */
 .hero-rings::after {
   display: none;
+}
+
+@media (max-width: 760px) {
+  .hero-rings {
+    inset: -8%;
+  }
 }
 
 .hero-photo {
