@@ -29,7 +29,7 @@ float ring(vec2 p, float ri, float cut, float t0, float px) {
   float d = abs(length(p) - r);
   float a = atan(abs(p.y), abs(p.x)) / HP;
   float th = max(1.0 - a, 0.5) * px * uLineThickness;
-  float h = (1.0 - smoothstep(th, th * 1.5, d)) + 1.0;
+  float h = 1.0 - smoothstep(th, th * 1.5, d);
   d += pow(cut * a, 3.0) * r;
   return h * exp(-uAttenuation * d) * fade(t);
 }
@@ -52,9 +52,10 @@ void main() {
     c = mix(c, rc, vec3(ring(pr, uBaseRadius + fi * uRadiusStep, pow(uRingGap, fi), i == 0 ? 0.0 : 2.95 * fi, px)));
   }
   c *= 1.0 + uBurst * 2.0;
+  float ringMask = max(c.r, max(c.g, c.b));
   float n = fract(sin(dot(gl_FragCoord.xy + uTime * 100.0, vec2(12.9898, 78.233))) * 43758.5453);
-  c += (n - 0.5) * uNoiseAmount;
-  gl_FragColor = vec4(c, max(c.r, max(c.g, c.b)) * uOpacity);
+  c += (n - 0.5) * uNoiseAmount * max(ringMask, 0.0);
+  gl_FragColor = vec4(c, max(ringMask, 0.0) * uOpacity);
 }
 `;
 
