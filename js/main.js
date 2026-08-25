@@ -5,6 +5,7 @@
   var WHATSAPP_MESSAGE = encodeURIComponent('Olá! Vim pelo site da WebJite e gostaria de um orçamento.');
   var WHATSAPP_URL = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + WHATSAPP_MESSAGE;
   var THEME_KEY = 'webjite-theme';
+  var heroRingsInstance = null;
 
   function getStoredTheme() {
     try {
@@ -20,9 +21,21 @@
     } catch (e) {}
   }
 
+  function getMagicRingsColors() {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    return isDark
+      ? { color: '#ffffff', colorTwo: '#cbd5e1' }
+      : { color: '#3f4a5a', colorTwo: '#7c8798' };
+  }
+
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     setStoredTheme(theme);
+
+    if (heroRingsInstance) {
+      var colors = getMagicRingsColors();
+      heroRingsInstance.setColors(colors.color, colors.colorTwo);
+    }
   }
 
   function initThemeToggle() {
@@ -209,19 +222,20 @@
 
     var heroRingsEl = document.getElementById('heroRings');
     if (heroRingsEl && typeof MagicRings !== 'undefined') {
-      new MagicRings('#heroRings', {
-        color: "#667085",
-        colorTwo: "#3f4a5a",
+      var ringColors = getMagicRingsColors();
+      heroRingsInstance = new MagicRings('#heroRings', {
+        color: ringColors.color,
+        colorTwo: ringColors.colorTwo,
         ringCount: 6,
         speed: 1,
-        attenuation: 10,
-        lineThickness: 2,
+        attenuation: 5.5,
+        lineThickness: 3.2,
         baseRadius: 0.35,
         radiusStep: 0.1,
         scaleRate: 0.1,
-        opacity: 1,
+        opacity: 1.35,
         blur: 0,
-        noiseAmount: 0.1,
+        noiseAmount: 0.04,
         rotation: 0,
         ringGap: 1.5,
         fadeIn: 0.7,

@@ -173,6 +173,11 @@ class MagicRings {
     this.tryStart();
   }
 
+  setColors(color, colorTwo) {
+    this.props.color = color;
+    this.props.colorTwo = colorTwo;
+  }
+
   resize() {
     const mount = this.container;
     const w = mount.clientWidth;
