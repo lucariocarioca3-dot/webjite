@@ -427,8 +427,12 @@ ul {
 }
 
 .hero-visual .hero-photo {
-  width: 100%;
-  height: 100%;
+  width: 78%;
+  height: 78%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   aspect-ratio: 4 / 3;
   object-fit: contain;
   object-position: center;
@@ -450,19 +454,9 @@ ul {
   box-shadow: none !important;
 }
 
-.hero-visual::before {
-  content: '';
-  position: absolute;
-  inset: 9%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(63, 74, 90, 0.42) 0%, rgba(63, 74, 90, 0.18) 38%, rgba(63, 74, 90, 0.04) 58%, transparent 76%);
-  filter: blur(22px);
-  pointer-events: none;
-  z-index: 0;
-}
-
+.hero-visual::before,
 [data-theme="dark"] .hero-visual::before {
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.045) 42%, transparent 76%);
+  display: none;
 }
 
 .hero-rings {
@@ -481,45 +475,12 @@ ul {
   display: block;
   width: 100%;
   height: 100%;
-  filter: brightness(1.18) contrast(1.12) drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
+  filter: brightness(1.35) contrast(1.2) drop-shadow(0 0 1px rgba(20, 26, 36, 0.86)) drop-shadow(0 0 3px rgba(255, 255, 255, 0.55));
 }
 
-/* Fallback visual: mantém o desenho branco perceptível mesmo se o WebGL estiver fraco. */
+/* O efeito é desenhado exclusivamente pelo canvas WebGL. */
 .hero-rings::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 42%;
-  aspect-ratio: 1;
-  transform: translate(-50%, -50%);
-  border: 2px solid rgba(255, 255, 255, 0.72);
-  border-radius: 50%;
-  box-shadow:
-    0 0 0 14px rgba(255, 255, 255, 0.48),
-    0 0 0 28px rgba(255, 255, 255, 0.32),
-    0 0 28px rgba(255, 255, 255, 0.55);
-  opacity: 0.72;
-  pointer-events: none;
-  z-index: 1;
-  animation: magic-rings-fallback 4.5s ease-in-out infinite;
-}
-
-@keyframes magic-rings-fallback {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(0.98);
-    opacity: 0.58;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.04);
-    opacity: 0.82;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-rings::after {
-    animation: none;
-  }
+  display: none;
 }
 
 .hero-photo {
