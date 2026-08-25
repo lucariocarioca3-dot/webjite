@@ -160,7 +160,9 @@ class MagicRings {
       vertexShader,
       fragmentShader,
       uniforms: this.uniforms,
-      transparent: true
+      transparent: true,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
     });
     this.material = material;
 

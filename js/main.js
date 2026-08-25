@@ -22,10 +22,7 @@
   }
 
   function getMagicRingsColors() {
-    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    return isDark
-      ? { color: '#ffffff', colorTwo: '#cbd5e1' }
-      : { color: '#3f4a5a', colorTwo: '#7c8798' };
+    return { color: '#ffffff', colorTwo: '#ffffff' };
   }
 
   function applyTheme(theme) {
@@ -228,7 +225,7 @@
         colorTwo: ringColors.colorTwo,
         ringCount: 6,
         speed: 1,
-        attenuation: 5.5,
+        attenuation: 4,
         lineThickness: 3.2,
         baseRadius: 0.35,
         radiusStep: 0.1,
